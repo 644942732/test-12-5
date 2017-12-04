@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<title>Insert title here</title>
+</head>
+<script type="text/javascript"
+	th:src="@{webjars/jquery/3.2.1/jquery.min.js}">
+	
+</script>
+<script type="text/javascript">
+	$(function() {
+		$.ajax({
+			url : "http://localhost:8080/demo10",
+			dataType : "json",
+			success : function(data) {
+				for ( var index in data) {
+
+					$("table").append(
+
+							"<tr><td>" + data[index].name + "</td>" + "<td>"
+									+ data[index].age + "</td></tr>"
+
+					);
+				}
+			}
+
+		})
+	})
+</script>
+<body>
+
+	<table>
+
+	</table>
+</body>
+</html>
